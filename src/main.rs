@@ -1,5 +1,3 @@
-//extern crate minigrep; - this is unnecessary in more recent Rust
-
 use std::env;
 use std::process;
 
