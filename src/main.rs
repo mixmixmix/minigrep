@@ -9,7 +9,7 @@ fn main() {
 
     println!("{:?}",args);
     let config = Config::new(&args).unwrap_or_else(|err|{
-        println!("problem in config creation: {}", err);
+        eprintln!("problem in config creation: {}", err);
         process::exit(1);
     });
 
@@ -17,7 +17,7 @@ fn main() {
     println!("in a {}", config.filename);
 
     if let Err(e) = minigrep::run(config){
-        println!("We have a following problem, Sir! {}", e);
+        eprintln!("We have a following problem, Sir! {}", e);
         process::exit(1);
     }
 }
